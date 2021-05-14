@@ -55,4 +55,11 @@ export class UserService {
       id,
     };
   }
+
+  async deleteById(id: string): Promise<GetIdUserDto> {
+    await this.userModel.deleteOne({ _id: id });
+    return {
+      id,
+    };
+  }
 }
